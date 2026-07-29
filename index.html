@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Codex × 법제처 MCP — 변호사를 위한 2시간 토탈 솔루션 (FDE 실습)</title>
+<title>Codex × 법제처 MCP — 파산전문 변호사를 위한 2시간 토탈 솔루션</title>
 <style>
   :root{
     --ink:#0f172a; --muted:#5b6b82; --line:#e2e8f0; --blue:#2563eb;
@@ -62,13 +62,13 @@
 <header>
   <div class="wrap">
     <span class="tag">FDE 실습 · Forward Deployed Engineer</span>
-    <h1>Codex × 법제처 MCP<br>변호사를 위한 2시간 토탈 솔루션</h1>
-    <p>비개발자 변호사가 AI에게 법률 실무를 시키는 법을 배우고, 2시간 안에 돌아가는 솔루션을 함께 만든다.</p>
+    <h1>Codex × 법제처 MCP<br>파산전문 변호사를 위한 2시간 토탈 솔루션</h1>
+    <p>일요일 2시간 동안 Codex로 일하는 법을 알려주고, 개인파산·개인회생 사건의 1차 검토 루틴을 함께 만든다.</p>
     <div class="meta">
       <div class="chip">⏱ 2시간 핸즈온</div>
-      <div class="chip">👤 대상: 변호사 친구 (비개발자)</div>
+      <div class="chip">👤 대상: 파산전문 변호사 친구</div>
       <div class="chip">🛠 Codex CLI + 법제처(law.go.kr) MCP</div>
-      <div class="chip">🎯 결과물: 돌아가는 법률 어시스턴트</div>
+      <div class="chip">🎯 결과물: 사건 검토 패킷 자동화</div>
     </div>
   </div>
 </header>
@@ -76,39 +76,69 @@
 <section><div class="wrap">
   <span class="label">Why · FDE 관점</span>
   <h2>코드를 가르치지 않는다. "AI에게 일 시키는 법"을 이식한다.</h2>
-  <p class="lead">FDE(Forward Deployed Engineer)는 고객 현장에 들어가 그의 실제 업무를 이해하고, 짧은 시간에 돌아가는 맞춤 솔루션을 함께 만든다. 이번 실습의 고객은 변호사다.</p>
+  <p class="lead">FDE(Forward Deployed Engineer)는 고객 현장에 들어가 실제 업무를 이해하고, 짧은 시간에 돌아가는 맞춤 솔루션을 함께 만든다. 이번 실습의 고객은 개인파산·개인회생 변호사다.</p>
   <div class="grid g3">
-    <div class="card"><h3>고객의 실제 업무</h3><p>법령·판례 검색, 의뢰인 질의응답, 계약 검토, 법 개정 추적 — 반복적이고 근거가 중요한 일.</p></div>
-    <div class="card"><h3>도구</h3><p>Codex가 지시를 실행하고, <b>법제처 MCP</b>가 실제 법령 데이터를 붙인다. 환각 대신 조문 인용.</p></div>
-    <div class="card"><h3>성공 기준</h3><p>2시간 뒤 변호사가 <b>혼자서</b> 세 가지 루틴을 재실행할 수 있으면 성공. 화려함보다 재현.</p></div>
+    <div class="card"><h3>고객의 실제 업무</h3><p>사건 접수, 자료정리, 누락자료 확인, 쟁점 후보 탐지, 보고서 초안, 변호사 검토 질문 정리.</p></div>
+    <div class="card"><h3>도구</h3><p>Codex가 파일과 루틴을 만들고, <b>법제처 MCP</b>가 실제 법령 근거를 붙인다. 환각 대신 조문 확인.</p></div>
+    <div class="card"><h3>성공 기준</h3><p>2시간 뒤 변호사가 <b>혼자서</b> 익명 사건 1건의 1차 검토 패킷을 재실행할 수 있으면 성공.</p></div>
   </div>
 </div></section>
 
 <section><div class="wrap">
   <span class="label">Timeline · 2시간</span>
   <h2>2시간 진행 흐름</h2>
-  <p class="lead">"첫 성공 → 루틴 → 토탈 솔루션 → 핸드오프" 순서. 막히면 접고 다음으로.</p>
+  <p class="lead">"문제정의 → MCP 연결 → 첫 성공 → 사건 루틴 → 검토 패킷 → 핸드오프" 순서. 막히면 접고 다음으로.</p>
   <div class="card">
-    <div class="time"><div class="clock">0:00–0:15</div><div><b>Part 0 · 환경 준비</b><span>Codex 설치 확인 → 법제처 MCP 연결 → <code>AGENTS.md</code> 한 장. "AI에게 규칙을 한 번만 알려주면 매번 설명 안 해도 된다"를 체감.</span></div></div>
-    <div class="time"><div class="clock">0:15–0:40</div><div><b>Part 1 · 첫 성공 경험</b><span>Codex에게 법령 하나를 검색·요약시킨다. 예: "개인정보보호법 제15조 찾아서 쉽게 설명해줘." 5분 안에 되는 걸 눈으로 본다.</span></div></div>
-    <div class="time"><div class="clock">0:40–1:15</div><div><b>Part 2 · 루틴 만들기</b><span>반복 업무를 <code>SKILL.md</code>·프롬프트로 고정. 루틴①(법령 Q&A)을 함께 만들고 변호사가 직접 질문을 바꿔 실행.</span></div></div>
-    <div class="time"><div class="clock">1:15–1:45</div><div><b>Part 3 · 토탈 솔루션 조립</b><span>루틴들을 묶어 결과를 HTML 리포트로. 루틴②(개정 모니터) 또는 루틴③(자문 메모)을 완성해 "산출물"을 만든다.</span></div></div>
+    <div class="time"><div class="clock">0:00–0:15</div><div><b>Part 0 · 문제정의</b><span>월 12건 처리 흐름, 현재 병목, 자동화 가능/불가능 범위, 개인정보 금지선을 먼저 정한다.</span></div></div>
+    <div class="time"><div class="clock">0:15–0:30</div><div><b>Part 1 · 환경 준비</b><span>Codex 설치 확인 → 법제처 MCP 연결 → <code>AGENTS.md</code> 규칙 주입. "규칙은 한 번만"을 체감한다.</span></div></div>
+    <div class="time"><div class="clock">0:30–0:50</div><div><b>Part 2 · 첫 성공 경험</b><span>Codex에게 법령 하나를 검색·요약시킨다. 예: "채무자 회생 및 파산에 관한 법률에서 개인파산 관련 조문 찾아줘."</span></div></div>
+    <div class="time"><div class="clock">0:50–1:20</div><div><b>Part 3 · 사건 Intake 루틴</b><span>익명 샘플 사건을 기준으로 문서 인덱스, 누락자료, 기본 사실, 쟁점 후보를 뽑는 루틴을 만든다.</span></div></div>
+    <div class="time"><div class="clock">1:20–1:45</div><div><b>Part 4 · 토탈 패킷 조립</b><span>요약·쟁점·법령근거·증빙표·변호사 질문을 하나의 HTML 검토 패킷으로 만든다.</span></div></div>
     <div class="time"><div class="clock">1:45–2:00</div><div><b>Part 4 · 핸드오프</b><span><code>README.md</code>에 재실행법 기록 → GitHub에 올리기 → "다음 주 혼자 해볼 것" 한 가지 지정.</span></div></div>
   </div>
 </div></section>
 
 <section><div class="wrap">
   <span class="label">Solution · 토탈 솔루션 구성</span>
-  <h2>세 개의 루틴 = 변호사의 하루</h2>
-  <p class="lead">각 루틴은 <b>입력 → 법제처 MCP 검색 → 근거(조문) 인용 → 쉬운 출력</b> 구조. 환각을 구조적으로 막는다.</p>
+  <h2>다섯 개의 루틴 = 사건 1건의 1차 검토</h2>
+  <p class="lead">각 루틴은 <b>입력 → 정리 → 법제처 MCP 근거 확인 → 초안 → 변호사 검토</b> 구조. 법률판단은 사람이 한다.</p>
   <div class="grid g3">
     <div class="card hl"><h3>① 법령 Q&A</h3><p>의뢰인 질문 → 관련 법령 자동 검색 → <b>조문 인용 + 평이한 설명</b>. "이 상황에 어떤 법이 적용되나?"를 즉답.</p></div>
     <div class="card hl"><h3>② 개정 모니터</h3><p>관심 법령(예: 개인정보보호법)의 <b>변경 감지 → 변경점 요약 리포트</b>. 매주 자동으로 "무엇이 바뀌었나"를 받는다.</p></div>
     <div class="card hl"><h3>③ 자문 메모 생성</h3><p>사안 입력 → 관련 법령·판례 근거 수집 → <b>자문 메모 초안(HTML)</b>. 변호사가 검토·수정만.</p></div>
+    <div class="card hl"><h3>④ 사건 Intake</h3><p>원본자료 → 문서 인덱스 → 누락자료 → 기본 사실 요약. 사건 시작 30분을 줄이는 루틴.</p></div>
+    <div class="card hl"><h3>⑤ 검토 패킷</h3><p>쟁점 후보, 법령 근거, 증빙표, 변호사 질문을 한 화면에 모아 최종 검토 시간을 줄인다.</p></div>
   </div>
   <div class="card warn" style="margin-top:16px">
     <h3>⚖ 안전 원칙 (변호사에게 반드시 심을 것)</h3>
     <p>AI 출력은 <b>초안</b>이지 법률 자문이 아니다. 모든 결론은 <b>인용된 조문·판례로 검증</b>한 뒤 변호사가 최종 책임진다. 의뢰인 실명·민감정보는 넣지 않는다.</p>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <span class="label">Orchestration · 일하는 구조</span>
+  <h2>단일 답변이 아니라 워커를 나눠 일한다</h2>
+  <p class="lead">이게 이번 실습의 핵심이다. 변호사 업무를 한 번에 묻지 말고, 작은 워커들에게 나눠서 맡긴다.</p>
+  <div class="grid g3">
+    <div class="card"><h3>Intake Worker</h3><p>파일명, 문서유형, 누락자료, 사건 기본정보를 정리한다.</p></div>
+    <div class="card"><h3>Extraction Worker</h3><p>PDF/OCR 텍스트에서 날짜, 금액, 계좌, 재산, 소득, 가족관계 후보를 뽑는다.</p></div>
+    <div class="card"><h3>Screening Worker</h3><p>가족 간 이체, 편파변제, 재산처분, 보험, 차량, 진술불일치 후보를 표시한다.</p></div>
+    <div class="card"><h3>Legal Grounding</h3><p>법제처 MCP로 관련 법령 조문을 확인한다. 기억으로 조문을 만들지 않는다.</p></div>
+    <div class="card"><h3>Evidence Worker</h3><p>주요 문장마다 문서명과 페이지 근거를 붙이고, 근거 없는 문장은 분리한다.</p></div>
+    <div class="card"><h3>Review Worker</h3><p>개인정보 노출, 법률 단정 표현, 누락자료, 변호사 질문을 최종 점검한다.</p></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <span class="label">Output · 2시간 뒤 남길 결과물</span>
+  <h2>변호사에게 보여줄 최종 산출물</h2>
+  <div class="grid g2">
+    <div class="card good"><h3>1. GitHub Pages 기획서</h3><p>이 페이지. 일요일 실습의 목적, 순서, 안전선, 재실행법을 보여준다.</p></div>
+    <div class="card good"><h3>2. AGENTS.md</h3><p>Codex가 매번 따라야 할 변호사용 규칙. 근거 우선, 개인정보 금지, 초안 명시.</p></div>
+    <div class="card good"><h3>3. SKILL.md</h3><p>개인파산/개인회생 사건 1차 검토 패킷 생성 절차.</p></div>
+    <div class="card good"><h3>4. prompts/</h3><p>Intake, 법제처 MCP 근거 확인, 변호사 검토 패킷 생성용 복붙 프롬프트.</p></div>
+    <div class="card good"><h3>5. 샘플 사건 폴더</h3><p>실제 의뢰인 정보 없이 익명 샘플로 테스트한다.</p></div>
+    <div class="card good"><h3>6. 다음 액션</h3><p>월 12건 기준으로 파일럿 1건 처리시간과 변호사 수정량을 측정한다.</p></div>
   </div>
 </div></section>
 
@@ -137,11 +167,16 @@ enabled = true</code></pre>
 ├─ index.html          ← GitHub Pages 랜딩 (이 기획서)
 ├─ README.md           ← 프로젝트 개요 · 재실행법
 ├─ AGENTS.md           ← 변호사용 Codex 규칙 (한 번만 작성)
+├─ SKILL.md            ← 개인파산/회생 1차 검토 패킷 생성 절차
 ├─ routines/
 │  ├─ 01_law_qa.md         ← 법령 Q&A 루틴
 │  ├─ 02_amendment_watch.md ← 개정 모니터 루틴
 │  └─ 03_advisory_memo.md   ← 자문 메모 생성 루틴
-└─ prompts/            ← 복붙용 프롬프트 모음</div>
+├─ prompts/
+│  ├─ 01_case_intake_prompt.md
+│  ├─ 02_law_mcp_grounding_prompt.md
+│  └─ 03_review_packet_prompt.md
+└─ cases/              ← 익명 샘플 사건 폴더</div>
   <div class="grid g2" style="margin-top:16px">
     <div class="card good"><h3>공개 3단계</h3><p>① GitHub에 <code>fde-codex-lawyer</code> 리포 생성 ② 이 폴더 push ③ Settings → Pages → <b>main / (root)</b> 선택 → 몇 분 뒤 <code>waterfirst.github.io/fde-codex-lawyer</code> 라이브.</p></div>
     <div class="card"><h3>왜 GitHub인가</h3><p>변호사에게 "결과를 자산으로 남기는 습관"을 심는다. 사내 서버·설치 없이 링크 하나로 공유·재실행. FDE의 마지막 1cm = 핸드오프.</p></div>
@@ -162,7 +197,7 @@ enabled = true</code></pre>
 
 <footer><div class="wrap">
   <span class="pill">FDE 실습</span><span class="pill">Codex</span><span class="pill">법제처 MCP</span><br><br>
-  기획: waterfirst · 2026-07 · 일요일 2시간 핸즈온용. 이 페이지는 GitHub Pages로 서비스된다.
+  기획: waterfirst · 2026-07 · 일요일 2시간 FDE 핸즈온용. 이 페이지는 GitHub Pages로 서비스된다.
 </div></footer>
 </body>
 </html>
