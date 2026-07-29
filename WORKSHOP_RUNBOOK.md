@@ -1,13 +1,18 @@
 # 일요일 2시간 워크숍 진행자 스크립트
 
-_Codex × 법제처 MCP × 파산전문 변호사 업무 자동화_
+_Local Python × Codex × 법제처 MCP × 파산전문 변호사 업무 자동화_
 
 ## 목표
 
 변호사 친구에게 “AI에게 일 시키는 법”을 2시간 안에 체감시킨다.
 
 핵심은 코딩 교육이 아니다.  
-**문제정의 → NotebookLM 문서독해 → Codex 지시 → 법제처 MCP 근거확인 → 사건 검토 패킷 생성 → GitHub 핸드오프**를 경험시키는 것이다.
+**문제정의 → Python 로컬 문서독해 → Codex 지시 → 법제처 MCP 근거확인 → 사건 검토 패킷 생성 → GitHub 핸드오프**를 경험시키는 것이다.
+
+핵심 보안 원칙:
+
+> 실제 사건 문서는 변호사 노트북 안에서만 읽는다.  
+> Codex에는 원문이 아니라 Python이 만든 마스킹·구조화 결과만 넘긴다.
 
 ## 0:00–0:15 문제정의
 
@@ -24,30 +29,30 @@ _Codex × 법제처 MCP × 파산전문 변호사 업무 자동화_
 > 오늘 목표는 법률판단을 AI에게 넘기는 게 아니다.  
 > 반복 정리 업무를 줄이고, 변호사가 판단해야 할 포인트를 더 빨리 보게 만드는 것이다.
 
-## 0:15–0:35 NotebookLM 첫 성공
+## 0:15–0:35 Python 로컬 리더 첫 성공
 
 ### 목적
 
 변호사 업무의 본질은 코딩보다 문서 독해다.  
-첫 성공은 Codex CLI가 아니라 NotebookLM으로 잡는다.
+첫 성공은 외부 클라우드가 아니라 변호사 노트북 안에서 Python으로 잡는다.
 
 ### 사용할 자료
 
 - `cases/sample_001_personal_bankruptcy/input/interview/interview_note.md`
 - `cases/sample_001_personal_bankruptcy/input/metadata.json`
 
-### NotebookLM 질문
+### 실행
 
-```text
-이 익명 개인파산 샘플 사건에서 핵심 사실, 누락자료, 쟁점 후보, 변호사가 확인해야 할 질문을 정리해줘.
-각 항목은 가능한 경우 출처 위치를 함께 표시해줘.
-법률 결론은 확정하지 말고 "검토 필요" 수준으로만 표현해줘.
+```bash
+python3 scripts/local_doc_intake.py \
+  cases/sample_001_personal_bankruptcy/input \
+  --out cases/sample_001_personal_bankruptcy/output/local_intake
 ```
 
 ### 변호사에게 설명할 말
 
-> NotebookLM은 눈이다. 문서를 읽고 핵심을 뽑는다.  
-> Codex는 손이다. 그 결과를 파일, 보고서, 루틴으로 만든다.
+> Python은 노트북 안의 눈이다. 문서를 읽고 개인정보를 가린다.  
+> Codex는 손이다. 마스킹된 결과를 파일, 보고서, 루틴으로 만든다.
 
 ## 0:35–0:50 환경 연결
 
@@ -71,7 +76,7 @@ korean_law MCP를 사용해 "채무자 회생 및 파산에 관한 법률"에서
 
 ### 목적
 
-NotebookLM이 뽑은 사실/쟁점 후보를 Codex가 표준 산출물로 바꾸는 것을 보여준다.
+Python 로컬 리더가 뽑은 사실/쟁점 후보를 Codex가 표준 산출물로 바꾸는 것을 보여준다.
 
 ### 시연
 

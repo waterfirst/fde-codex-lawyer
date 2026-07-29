@@ -1,13 +1,27 @@
 # 복붙용 프롬프트 (실습 중 바로 사용)
 
-## 루틴⓪ NotebookLM 첫 성공
-아래 익명 샘플 사건 자료를 읽고, 변호사 검토용으로 정리해줘.
+## 루틴⓪ Python 로컬 리더 첫 성공
+변호사 노트북에서 아래 명령으로 익명 샘플 사건 자료를 먼저 읽고 마스킹한다.
+
+```bash
+python3 scripts/local_doc_intake.py \
+  cases/sample_001_personal_bankruptcy/input \
+  --out cases/sample_001_personal_bankruptcy/output/local_intake
+```
+
+그다음 Codex에게 아래처럼 지시한다.
+
+```text
+AGENTS.md와 SKILL.md를 먼저 읽어라.
+cases/sample_001_personal_bankruptcy/output/local_intake/ 폴더의
+case_intake.json, document_index.csv, redacted_text.md만 사용해
+변호사 검토용 사건 1차 패킷을 만들어라.
 
 주의:
 - 법률 결론을 확정하지 말 것
 - 모르는 내용은 추정하지 말 것
-- 답변마다 가능한 출처 문서/문단을 붙일 것
-- 실제 의뢰인 개인정보가 아니라 익명 샘플이라는 전제로만 처리할 것
+- 개인정보 복원 금지
+- 근거 없는 문장은 unsupported_claims.md로 분리할 것
 
 출력:
 1. 핵심 사실 10개
@@ -15,6 +29,7 @@
 3. 개인파산/개인회생 쟁점 후보
 4. 이상거래·재산누락 의심 포인트
 5. 변호사가 의뢰인에게 물어볼 질문 10개
+```
 
 ## 연결 확인
 개인정보보호법 제15조를 korean_law MCP로 찾아서 조문 원문과 쉬운 설명을 함께 보여줘.

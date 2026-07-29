@@ -1,11 +1,29 @@
-# 루틴⓪ NotebookLM 첫 성공 프롬프트
+# 루틴⓪ Python 로컬 리더 우선 + NotebookLM 선택 옵션
 
 목적: 변호사 업무의 핵심인 **문서 읽기와 핵심 파악**을 가장 먼저 성공시킨다.
 
-사용 도구: NotebookLM  
-사용 자료: 익명 샘플 사건 자료만 사용한다. 실제 의뢰인 원문은 업로드하지 않는다.
+기본 도구: Python local reader  
+선택 도구: NotebookLM/Gemini  
+사용 자료: 실제 사건은 변호사 노트북 안에서만 처리한다. NotebookLM/Gemini는 익명 샘플 또는 완전 마스킹 자료에만 쓴다.
+
+## Python 로컬 리더 실행
+
+```bash
+python3 scripts/local_doc_intake.py \
+  cases/sample_001_personal_bankruptcy/input \
+  --out cases/sample_001_personal_bankruptcy/output/local_intake
+```
+
+생성물:
+
+- `case_intake.json`
+- `document_index.csv`
+- `redacted_text.md`
+- `README_FOR_CODEX.md`
 
 ## NotebookLM에 붙여넣을 질문
+
+아래 질문은 **익명 샘플 또는 완전 마스킹 자료에만** 사용한다.
 
 아래 사건 자료를 변호사 검토 보조 관점에서 정리해줘.
 
@@ -29,11 +47,12 @@
 
 ## Codex로 넘길 때
 
-NotebookLM 결과를 그대로 믿지 말고, Codex에게 다음처럼 지시한다.
+Python 로컬 리더 결과 또는 NotebookLM 결과를 그대로 믿지 말고, Codex에게 다음처럼 지시한다.
 
 ```text
 AGENTS.md와 SKILL.md를 먼저 읽어라.
-NotebookLM이 정리한 아래 결과를 참고하되, 확정 사실로 단정하지 마라.
+Python 로컬 리더가 만든 local_intake 결과를 기준으로 하라.
+NotebookLM/Gemini 결과가 있으면 참고만 하고, 확정 사실로 단정하지 마라.
 cases/sample_001_personal_bankruptcy/input/ 자료와 대조하여
 document_index.csv, missing_documents.md, 01_case_summary.md,
 issues_for_lawyer.md 초안을 만들어라.
