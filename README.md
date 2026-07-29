@@ -114,3 +114,15 @@ AI 출력은 **초안**이지 법률 자문이 아니다. 모든 결론은 인�
 1. `~/.codex/config.toml`의 `korean_law` MCP `enabled=true` 확인
 2. Codex 실행 후 `AGENTS.md` → 원하는 루틴 파일을 읽히고 지시
 3. 산출물(HTML/MD)은 프로젝트 폴더에 저장, 필요하면 GitHub push
+
+## GitHub 운영 메모
+
+- 저장소: <https://github.com/waterfirst/fde-codex-lawyer>
+- 라이브: <https://waterfirst.github.io/fde-codex-lawyer/>
+- Git remote: `git@github.com:waterfirst/fde-codex-lawyer.git`
+- Git 전송 방식: **SSH**
+- 인증 키: `~/.ssh/note10.pub` 등록 완료
+- 운영 원칙:
+  - 실제 `git push`는 SSH 키로 수행한다.
+  - HTTPS 토큰은 GitHub API 호출이 필요한 경우에만 사용한다.
+  - 의뢰인 사건 원문, API 키, 토큰, 개인정보는 커밋하지 않는다.
