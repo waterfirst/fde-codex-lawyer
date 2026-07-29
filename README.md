@@ -60,6 +60,22 @@
 - law.go.kr 오픈API 인증키(`OC`) — [open.law.go.kr](https://open.law.go.kr)에서 발급
 - `~/.codex/config.toml`에 `korean_law` MCP 등록 (아래)
 
+### 변호사에게 MCP를 이렇게 설명한다
+
+> MCP는 AI에게 “법제처 검색도구”를 붙여주는 연결장치다.  
+> Codex가 기억으로 법을 말하지 않고, 법제처 조문을 직접 확인하게 만든다.
+
+깊은 원리까지 가르칠 필요는 없다.  
+일요일에는 **설치 → 키 등록 → 조문 조회 테스트 → 사건 루틴에 연결**까지만 보여주면 충분하다.
+
+### 변호사 노트북 설치 순서
+
+1. Codex 설치/로그인 확인
+2. Python 확인: `python3 --version`
+3. 법제처 OpenAPI 키 발급: <https://open.law.go.kr>
+4. `~/.codex/config.toml`에 `korean_law` MCP 등록
+5. Codex에서 조문 조회 테스트
+
 ```toml
 [mcp_servers.korean_law]
 command = "npx"
@@ -71,6 +87,13 @@ enabled = true
 ```
 
 연결 확인: Codex에서 `개인정보보호법 제15조 찾아줘` → 실제 조문이 나오면 성공.
+
+파산/회생 실습 연결 확인:
+
+```text
+korean_law MCP로 채무자 회생 및 파산에 관한 법률에서 개인파산 관련 조문을 찾아줘.
+조문 번호, 핵심 문장, 쉬운 설명을 짧게 정리해줘.
+```
 
 ## 2시간 흐름
 | 시간 | 파트 | 내용 |

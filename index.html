@@ -174,11 +174,13 @@
 
 <section><div class="wrap">
   <span class="label">Setup · 법제처 MCP 연결</span>
-  <h2>변호사가 따라 하는 연결 3단계</h2>
+  <h2>변호사가 따라 하는 MCP 연결법</h2>
+  <p class="lead">MCP는 AI에게 “법제처 검색도구”를 붙여주는 연결장치다. Codex가 기억으로 법을 말하지 않고, 법제처 조문을 직접 확인하게 만든다.</p>
   <ol class="steps">
     <li><b>인증키 발급</b> — <a href="https://open.law.go.kr">open.law.go.kr</a>에서 오픈API 신청 → 본인 <code>OC</code>(이메일 앞부분 형태) 발급.</li>
+    <li><b>변호사 노트북에서 Codex/Python 확인</b> — 사건 문서는 노트북 안에서만 읽고, Codex는 마스킹 결과와 법령 조회만 수행한다.</li>
     <li><b>Codex에 MCP 등록</b> — <code>~/.codex/config.toml</code>에 아래 블록 추가(본인 키로).</li>
-    <li><b>연결 확인</b> — Codex에서 "개인정보보호법 제15조 찾아줘" → 실제 조문이 나오면 성공.</li>
+    <li><b>연결 확인</b> — Codex에서 "채무자 회생 및 파산에 관한 법률에서 개인파산 관련 조문 찾아줘" → 실제 조문이 나오면 성공.</li>
   </ol>
   <pre><code>[mcp_servers.korean_law]
 command = "npx"
@@ -187,6 +189,10 @@ env = { LAW_OC = "본인_인증키" }
 startup_timeout_sec = 30
 tool_timeout_sec = 180
 enabled = true</code></pre>
+  <div class="card good" style="margin-top:16px">
+    <h3>변호사에게 각인시킬 한 줄</h3>
+    <p>법률 판단을 AI에게 맡기는 게 아니라, <b>법률 검토 전 자료정리와 조문확인을 자동화</b>하는 것이다.</p>
+  </div>
 </div></section>
 
 <section><div class="wrap">
