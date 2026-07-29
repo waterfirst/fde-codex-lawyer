@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Codex × 법제처 MCP — 파산전문 변호사를 위한 2시간 토탈 솔루션</title>
+<title>NotebookLM × Codex × 법제처 MCP — 파산전문 변호사를 위한 2시간 토탈 솔루션</title>
 <style>
   :root{
     --ink:#0f172a; --muted:#5b6b82; --line:#e2e8f0; --blue:#2563eb;
@@ -62,12 +62,12 @@
 <header>
   <div class="wrap">
     <span class="tag">FDE 실습 · Forward Deployed Engineer</span>
-    <h1>Codex × 법제처 MCP<br>파산전문 변호사를 위한 2시간 토탈 솔루션</h1>
-    <p>일요일 2시간 동안 Codex로 일하는 법을 알려주고, 개인파산·개인회생 사건의 1차 검토 루틴을 함께 만든다.</p>
+    <h1>NotebookLM × Codex × 법제처 MCP<br>파산전문 변호사를 위한 2시간 토탈 솔루션</h1>
+    <p>일요일 2시간 동안 AI를 분업시키는 법을 알려주고, 개인파산·개인회생 사건의 1차 검토 루틴을 함께 만든다.</p>
     <div class="meta">
       <div class="chip">⏱ 2시간 핸즈온</div>
       <div class="chip">👤 대상: 파산전문 변호사 친구</div>
-      <div class="chip">🛠 Codex CLI + 법제처(law.go.kr) MCP</div>
+      <div class="chip">🛠 NotebookLM + Codex CLI + 법제처 MCP</div>
       <div class="chip">🎯 결과물: 사건 검토 패킷 자동화</div>
     </div>
   </div>
@@ -79,7 +79,7 @@
   <p class="lead">FDE(Forward Deployed Engineer)는 고객 현장에 들어가 실제 업무를 이해하고, 짧은 시간에 돌아가는 맞춤 솔루션을 함께 만든다. 이번 실습의 고객은 개인파산·개인회생 변호사다.</p>
   <div class="grid g3">
     <div class="card"><h3>고객의 실제 업무</h3><p>사건 접수, 자료정리, 누락자료 확인, 쟁점 후보 탐지, 보고서 초안, 변호사 검토 질문 정리.</p></div>
-    <div class="card"><h3>도구</h3><p>Codex가 파일과 루틴을 만들고, <b>법제처 MCP</b>가 실제 법령 근거를 붙인다. 환각 대신 조문 확인.</p></div>
+    <div class="card"><h3>도구</h3><p><b>NotebookLM</b>이 문서를 읽고, <b>Codex</b>가 파일과 루틴을 만들고, <b>법제처 MCP</b>가 실제 법령 근거를 붙인다.</p></div>
     <div class="card"><h3>성공 기준</h3><p>2시간 뒤 변호사가 <b>혼자서</b> 익명 사건 1건의 1차 검토 패킷을 재실행할 수 있으면 성공.</p></div>
   </div>
 </div></section>
@@ -87,14 +87,32 @@
 <section><div class="wrap">
   <span class="label">Timeline · 2시간</span>
   <h2>2시간 진행 흐름</h2>
-  <p class="lead">"문제정의 → MCP 연결 → 첫 성공 → 사건 루틴 → 검토 패킷 → 핸드오프" 순서. 막히면 접고 다음으로.</p>
+  <p class="lead">"문제정의 → NotebookLM 문서독해 → Codex 자동화 → 법제처 근거확인 → 검토 패킷 → 핸드오프" 순서. 막히면 접고 다음으로.</p>
   <div class="card">
     <div class="time"><div class="clock">0:00–0:15</div><div><b>Part 0 · 문제정의</b><span>월 12건 처리 흐름, 현재 병목, 자동화 가능/불가능 범위, 개인정보 금지선을 먼저 정한다.</span></div></div>
-    <div class="time"><div class="clock">0:15–0:30</div><div><b>Part 1 · 환경 준비</b><span>Codex 설치 확인 → 법제처 MCP 연결 → <code>AGENTS.md</code> 규칙 주입. "규칙은 한 번만"을 체감한다.</span></div></div>
-    <div class="time"><div class="clock">0:30–0:50</div><div><b>Part 2 · 첫 성공 경험</b><span>Codex에게 법령 하나를 검색·요약시킨다. 예: "채무자 회생 및 파산에 관한 법률에서 개인파산 관련 조문 찾아줘."</span></div></div>
-    <div class="time"><div class="clock">0:50–1:20</div><div><b>Part 3 · 사건 Intake 루틴</b><span>익명 샘플 사건을 기준으로 문서 인덱스, 누락자료, 기본 사실, 쟁점 후보를 뽑는 루틴을 만든다.</span></div></div>
+    <div class="time"><div class="clock">0:15–0:35</div><div><b>Part 1 · NotebookLM 첫 성공</b><span>익명 샘플 문서를 올려 핵심 사실, 누락자료, 쟁점 후보, 변호사 질문을 출처와 함께 뽑는다.</span></div></div>
+    <div class="time"><div class="clock">0:35–0:50</div><div><b>Part 2 · 환경 준비</b><span>Codex 설치 확인 → 법제처 MCP 연결 → <code>AGENTS.md</code> 규칙 주입. "규칙은 한 번만"을 체감한다.</span></div></div>
+    <div class="time"><div class="clock">0:50–1:20</div><div><b>Part 3 · 사건 Intake 루틴</b><span>NotebookLM 결과와 익명 샘플 사건을 기준으로 문서 인덱스, 누락자료, 기본 사실, 쟁점 후보를 Codex가 파일로 만든다.</span></div></div>
     <div class="time"><div class="clock">1:20–1:45</div><div><b>Part 4 · 토탈 패킷 조립</b><span>요약·쟁점·법령근거·증빙표·변호사 질문을 하나의 HTML 검토 패킷으로 만든다.</span></div></div>
-    <div class="time"><div class="clock">1:45–2:00</div><div><b>Part 4 · 핸드오프</b><span><code>README.md</code>에 재실행법 기록 → GitHub에 올리기 → "다음 주 혼자 해볼 것" 한 가지 지정.</span></div></div>
+    <div class="time"><div class="clock">1:45–2:00</div><div><b>Part 5 · 핸드오프</b><span><code>README.md</code>에 재실행법 기록 → GitHub에 올리기 → "다음 주 혼자 해볼 것" 한 가지 지정.</span></div></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <span class="label">Tool Split · 도구 분업</span>
+  <h2>NotebookLM은 눈, Codex는 손, 법제처 MCP는 근거</h2>
+  <p class="lead">변호사 업무는 문서 독해가 핵심이다. 그래서 처음부터 한 도구로 다 하지 않고, 일마다 제일 잘하는 AI에게 맡긴다.</p>
+  <div class="grid g3">
+    <div class="card"><h3>NotebookLM · 눈</h3><p>여러 문서를 읽고 핵심 사실, 쟁점 후보, 출처 기반 질문을 뽑는다. 변호사에게 가장 빠른 첫 성공 경험을 준다.</p></div>
+    <div class="card"><h3>Gemini · 긴 문서 보조</h3><p>초장문 PDF, 스캔본, 표가 많은 문서를 통째로 구조화할 때 보조로 쓴다.</p></div>
+    <div class="card"><h3>Codex · 손</h3><p>NotebookLM 결과를 받아 파일 구조, 체크리스트, HTML 패킷, 반복 루틴으로 만든다.</p></div>
+    <div class="card"><h3>법제처 MCP · 근거</h3><p>기억으로 법을 쓰지 않고 실제 법령 조문을 확인한다. 환각을 줄이는 기준점이다.</p></div>
+    <div class="card"><h3>Claude/GPT · 오케스트레이터</h3><p>목표, 입력, 출력, 제약, 단계, 종료조건을 정하고 각 워커 결과를 검토한다.</p></div>
+    <div class="card"><h3>변호사 · 최종 판단</h3><p>AI는 초안과 정리만 한다. 법률 판단, 전략 선택, 의뢰인 커뮤니케이션은 변호사가 책임진다.</p></div>
+  </div>
+  <div class="card warn" style="margin-top:16px">
+    <h3>🔐 개인정보 안전선</h3>
+    <p>NotebookLM/Gemini는 외부 클라우드 서비스다. 실제 의뢰인 원문은 그대로 올리지 않는다. 실습은 익명 샘플만 쓰고, 실무는 민감정보 마스킹 또는 엔터프라이즈/로컬 처리를 검토한다.</p>
   </div>
 </div></section>
 
@@ -187,6 +205,7 @@ enabled = true</code></pre>
 │  ├─ 02_amendment_watch.md ← 개정 모니터 루틴
 │  └─ 03_advisory_memo.md   ← 자문 메모 생성 루틴
 ├─ prompts/
+│  ├─ 00_notebooklm_first_success.md
 │  ├─ 01_case_intake_prompt.md
 │  ├─ 02_law_mcp_grounding_prompt.md
 │  ├─ 03_review_packet_prompt.md
