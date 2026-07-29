@@ -70,6 +70,14 @@ AI 출력은 **초안**이지 법률 자문이 아니다. 모든 결론은 인�
 - 다음 사건에 재사용 가능한 문서/프롬프트/폴더 구조가 남았는가?
 - 변호사가 “이거 다음 사건에도 써보겠다”고 느끼는가?
 
+## 일요일에 열어놓을 파일
+
+- `WORKSHOP_RUNBOOK.md` — 진행자 스크립트
+- `CHECKLIST.md` — 준비/보안/시연 체크리스트
+- `prompts/copy_paste.md` — 실습 중 바로 복붙할 프롬프트
+- `prompts/04_full_orchestration_prompt.md` — 전체 사건 패킷 생성 프롬프트
+- `cases/sample_001_personal_bankruptcy/` — 익명 샘플 사건
+
 ## 재실행법
 1. `~/.codex/config.toml`의 `korean_law` MCP `enabled=true` 확인
 2. Codex 실행 후 `AGENTS.md` → 원하는 루틴 파일을 읽히고 지시

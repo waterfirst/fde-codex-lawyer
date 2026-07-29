@@ -143,6 +143,18 @@
 </div></section>
 
 <section><div class="wrap">
+  <span class="label">Practice Kit · 바로 쓰는 자료</span>
+  <h2>일요일에 열어놓고 진행할 파일</h2>
+  <p class="lead">2시간은 짧다. 설명보다 복붙과 실행 위주로 간다.</p>
+  <div class="grid g2">
+    <div class="card"><h3>진행자 스크립트</h3><p><a href="WORKSHOP_RUNBOOK.md">WORKSHOP_RUNBOOK.md</a> — 시간대별 멘트, 질문, 실패 시 대처.</p></div>
+    <div class="card"><h3>준비 체크리스트</h3><p><a href="CHECKLIST.md">CHECKLIST.md</a> — 환경, 보안, 반드시 보여줄 것.</p></div>
+    <div class="card"><h3>복붙 프롬프트</h3><p><a href="prompts/copy_paste.md">prompts/copy_paste.md</a> — 연결 확인, 법령 Q&A, 사건 Intake, 전체 오케스트레이션.</p></div>
+    <div class="card"><h3>익명 샘플 사건</h3><p><a href="cases/sample_001_personal_bankruptcy/">cases/sample_001_personal_bankruptcy/</a> — 실제 개인정보 없는 개인파산 실습용.</p></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
   <span class="label">Setup · 법제처 MCP 연결</span>
   <h2>변호사가 따라 하는 연결 3단계</h2>
   <ol class="steps">
@@ -168,6 +180,8 @@ enabled = true</code></pre>
 ├─ README.md           ← 프로젝트 개요 · 재실행법
 ├─ AGENTS.md           ← 변호사용 Codex 규칙 (한 번만 작성)
 ├─ SKILL.md            ← 개인파산/회생 1차 검토 패킷 생성 절차
+├─ WORKSHOP_RUNBOOK.md ← 일요일 2시간 진행자 스크립트
+├─ CHECKLIST.md        ← 준비·보안·시연 체크리스트
 ├─ routines/
 │  ├─ 01_law_qa.md         ← 법령 Q&A 루틴
 │  ├─ 02_amendment_watch.md ← 개정 모니터 루틴
@@ -175,8 +189,10 @@ enabled = true</code></pre>
 ├─ prompts/
 │  ├─ 01_case_intake_prompt.md
 │  ├─ 02_law_mcp_grounding_prompt.md
-│  └─ 03_review_packet_prompt.md
-└─ cases/              ← 익명 샘플 사건 폴더</div>
+│  ├─ 03_review_packet_prompt.md
+│  └─ 04_full_orchestration_prompt.md
+└─ cases/
+   └─ sample_001_personal_bankruptcy/ ← 익명 샘플 사건</div>
   <div class="grid g2" style="margin-top:16px">
     <div class="card good"><h3>공개 3단계</h3><p>① GitHub에 <code>fde-codex-lawyer</code> 리포 생성 ② 이 폴더 push ③ Settings → Pages → <b>main / (root)</b> 선택 → 몇 분 뒤 <code>waterfirst.github.io/fde-codex-lawyer</code> 라이브.</p></div>
     <div class="card"><h3>왜 GitHub인가</h3><p>변호사에게 "결과를 자산으로 남기는 습관"을 심는다. 사내 서버·설치 없이 링크 하나로 공유·재실행. FDE의 마지막 1cm = 핸드오프.</p></div>

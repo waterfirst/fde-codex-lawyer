@@ -1,0 +1,24 @@
+{
+  "case_id": "sample_001_personal_bankruptcy",
+  "case_type": "personal_bankruptcy",
+  "is_anonymized": true,
+  "client_alias": "A씨",
+  "created_for": "Codex x Korean Law MCP workshop",
+  "known_facts": {
+    "age_band": "40대",
+    "household": "배우자와 자녀 1명",
+    "employment": "최근 실직, 단기 아르바이트 소득 일부",
+    "monthly_income_estimate": "자료 불충분",
+    "debt_reason_summary": "사업 실패와 생활비 대출 누적",
+    "assets_summary": "본인 명의 차량 1대 가능성, 보험 해약환급금 여부 미확인",
+    "bank_account_period": "최근 1년 자료 일부만 있음"
+  },
+  "missing_or_uncertain": [
+    "최근 2년 전체 계좌거래내역",
+    "보험 가입 및 해약환급금 자료",
+    "차량 등록원부 및 시가 자료",
+    "최근 소득증빙",
+    "가족 간 이체 내역 소명"
+  ]
+}
+

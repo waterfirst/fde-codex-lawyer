@@ -16,3 +16,15 @@ YYYY-MM-DD 이후 변경 조문을 '법령/조문/변경내용/실무영향'으�
 AGENTS.md를 따른다. 아래 익명 사안에 대해 관련 법령·판례를 korean_law MCP로 조회하고
 자문 메모 초안을 advisory_memo.html로 작성하라(사실관계/쟁점/법령/판례/의견/면책).
 사안: "____"
+
+## 루틴④ 개인파산/개인회생 사건 Intake
+AGENTS.md와 SKILL.md를 먼저 읽어라.
+cases/sample_001_personal_bankruptcy/input/ 자료를 기준으로 사건 1건의 Intake를 수행하라.
+원본 파일은 수정하지 말고, document_index.csv, missing_documents.md, 01_case_summary.md 초안을 만들어라.
+개인정보와 법률 판단 확정 표현은 금지한다.
+
+## 루틴⑤ 전체 오케스트레이션
+AGENTS.md와 SKILL.md를 먼저 읽어라.
+prompts/04_full_orchestration_prompt.md의 지시대로 cases/sample_001_personal_bankruptcy 사건을 처리하라.
+목표는 변호사 검토용 1차 패킷이다.
+법률 판단 확정 금지, 개인정보 원문 출력 금지, 근거 없는 문장은 unsupported_claims.md로 분리하라.
