@@ -3,6 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <title>Local Python × Codex × 법제처 MCP — 파산전문 변호사를 위한 2시간 토탈 솔루션</title>
 <style>
   :root{
@@ -56,6 +59,10 @@
   .pill{display:inline-block;background:#ecfdf5;color:var(--good);border:1px solid #a7f3d0;
     border-radius:999px;padding:3px 10px;font-size:.8rem;font-weight:700;margin-right:6px}
   a{color:var(--blue)}
+  .livebar{position:fixed;right:14px;bottom:14px;z-index:20;background:#0f172a;color:#e2e8f0;
+    border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:8px 12px;font-size:.78rem;
+    box-shadow:0 10px 30px rgba(15,23,42,.18)}
+  .livebar b{color:#86efac}
 </style>
 </head>
 <body>
@@ -242,5 +249,33 @@ enabled = true</code></pre>
   <span class="pill">FDE 실습</span><span class="pill">Codex</span><span class="pill">법제처 MCP</span><br><br>
   기획: waterfirst · 2026-07 · 일요일 2시간 FDE 핸즈온용. 이 페이지는 GitHub Pages로 서비스된다.
 </div></footer>
+<div class="livebar" id="livebar">Live update <b>ON</b></div>
+<script>
+(() => {
+  const CURRENT_BUILD = "2026-07-30T00:15:02Z";
+  const bar = document.getElementById("livebar");
+  const setBar = (text) => { if (bar) bar.innerHTML = text; };
+  async function checkVersion() {
+    try {
+      const res = await fetch("version.json?ts=" + Date.now(), { cache: "no-store" });
+      if (!res.ok) throw new Error("version fetch failed");
+      const data = await res.json();
+      const latest = data.build_id || "";
+      if (latest && latest !== CURRENT_BUILD) {
+        setBar("새 버전 감지 · 자동 갱신");
+        const url = new URL(location.href);
+        url.searchParams.set("v", latest.replaceAll(":", "").replaceAll("-", ""));
+        location.replace(url.toString());
+      } else {
+        setBar("Live update <b>ON</b>");
+      }
+    } catch (e) {
+      setBar("Live update 확인 지연");
+    }
+  }
+  checkVersion();
+  setInterval(checkVersion, 60000);
+})();
+</script>
 </body>
 </html>
