@@ -13,6 +13,9 @@
 
 🔗 **기획 페이지(GitHub Pages)**: `https://waterfirst.github.io/fde-codex-lawyer/`
 
+📘 **초보자용 실행 매뉴얼(Windows·PowerShell)**: [`SETUP_GUIDE_WINDOWS.md`](SETUP_GUIDE_WINDOWS.md)
+— 소프트웨어를 전혀 몰라도 복붙만으로 환경설치(0~8단계)부터 파산업무 실행(A~H단계)까지 따라 하는 단계별 가이드.
+
 ## 2시간 목표
 
 2시간 뒤 변호사가 직접 할 수 있어야 한다.
